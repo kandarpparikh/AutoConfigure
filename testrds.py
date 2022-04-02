@@ -10,7 +10,6 @@ def get_secret_value(name):
 
 def getAllUsers():
     credentials = get_secret_value('project-rds-secrets-test')
-    print(credentials)
     creds = json.loads(credentials['SecretString'])
     connection = mysql.connector.connect(
     host=creds['host'],
@@ -18,7 +17,6 @@ def getAllUsers():
     password=creds['password'],
     database='MyAcademics'
     )
-    print(creds)
     # check_table_existence()
     cursor = connection.cursor()
     cursor.execute("Select * from users")
