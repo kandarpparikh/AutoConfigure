@@ -26,7 +26,7 @@ def read_csv(csvFile, list):
         list.append(row)
 
 if __name__ == '__main__':
-    tablename = 'Reviews-test'
+    tablename = 'Reviews-project'
     filename = 'Reviews.csv'
     items = []
 
