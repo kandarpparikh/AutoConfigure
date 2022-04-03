@@ -1,6 +1,5 @@
 {
   "name": "myacademic",
-  "proxy": "https://fqacmd4z31.execute-api.us-east-1.amazonaws.com/test/rds-myacademics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
