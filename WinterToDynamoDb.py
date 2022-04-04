@@ -32,7 +32,7 @@ def read_csv(csvFile, list):
         list.append(row)
 
 if __name__ == '__main__':
-    tablename = 'Winter_Courses-project'
+    tablename = 'Winter_Courses'
     filename = 'WinterCourses.csv'
     items = []
 

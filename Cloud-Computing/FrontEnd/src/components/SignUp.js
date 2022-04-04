@@ -32,13 +32,19 @@ const SignUp = () => {
             BannerId: data.get('bannerID'),
             Password: data.get('password')
         }
-        registerUser(user)
+        if(user.FirstName === "" || user.LastName ==="" || user.Email === "" || user.BannerId === "" || user.Password === ""){
+            alert("Please Enter values in below form!!!")
+        }else{
+            registerUser(user)
+        }
+        
     };
 
     const registerUser = (User) => {
         User.Operation = "register"
         axios.post(base_api_url, {headers:headers, User})
         .then((response) => {
+            console.log(response)
             if(response.data["body"]){
                 navigate("/")
             }else{

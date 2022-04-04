@@ -19,14 +19,14 @@ const CourseComp = ({course}) => {
             component="img"
             height="140"
             alt="course image"
+            image={course.img}
         />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
             {course.course_name.length > 26 ? course.course_name.substring(0, 22) + "..." : course.course_name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {course.description.length > 88 ? course.description.substring(0, 88) + "..." : course.description}
             </Typography>
         </CardContent>
         <CardActions>

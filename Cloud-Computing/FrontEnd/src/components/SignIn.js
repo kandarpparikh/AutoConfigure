@@ -32,18 +32,24 @@ const SignIn = () => {
             BannerId: data.get('bannerID'),
             Password: data.get('password')
         }
-        axios.post(base_api_url, {headers:headers, User})
-        .then((response) => {
-            if(response.data["body"]){
-                navigate("/dashboard", {state: {BannerId: User.BannerId}});
-            }
-            else{
-                alert("Credentials are wrong!!!")
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        });        
+        if(User.BannerId === "" || User.Password === ""){
+            alert("Please enter credential in below form!!!")
+        }else{
+            axios.post(base_api_url, {headers:headers, User})
+            .then((response) => {
+                console.log(response)
+                if(response.data["body"] === "true"){
+                    navigate("/dashboard", {state: {BannerId: User.BannerId}});
+                }
+                else{
+                    alert("Credentials are wrong!!!")
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });  
+        }
+              
     };
 
     return (

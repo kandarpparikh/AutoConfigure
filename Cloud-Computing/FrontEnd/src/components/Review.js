@@ -22,11 +22,12 @@ const Review = () => {
         let User = {
             Operation: "addreview",
             review: review.description,
-            stars:review.stars,
+            stars:review.stars.toString(),
             CRN: course.crn_no
         }
         axios.post(base_api_url, {headers:headers, User})
         .then((response) => {
+            console.log(response)
             if(response.data["body"]){
                 alert("Review is added successfully.")
             }
