@@ -10,7 +10,7 @@ def get_secret_value(name):
     return response
 
 def createTable():
-    credentials = get_secret_value('project-video1')
+    credentials = get_secret_value('project-video2')
     creds = json.loads(credentials['SecretString'])
     connection = mysql.connector.connect(
     host=creds['host'],
