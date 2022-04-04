@@ -10,7 +10,7 @@ def get_secret_value(name):
     return response
 
 def createTable():
-    credentials = get_secret_value('project-rds-test4')
+    credentials = get_secret_value('project-video1')
     creds = json.loads(credentials['SecretString'])
     connection = mysql.connector.connect(
     host=creds['host'],
@@ -19,7 +19,7 @@ def createTable():
     database=creds['dbname']
     )
     cursor = connection.cursor()
-    cursor.execute(" CREATE TABLE users (BannerId int NOT NULL,Email varchar(45) DEFAULT NULL,FirstName varchar(45) DEFAULT NULL,LastName varchar(45) DEFAULT NULL,Password varchar(45) DEFAULT NULL,CRN varchar(45) DEFAULT NULL,PRIMARY KEY (BannerId))")
+    cursor.execute(" CREATE TABLE users (BannerId varchar(45) NOT NULL,Email varchar(45) DEFAULT NULL,FirstName varchar(45) DEFAULT NULL,LastName varchar(45) DEFAULT NULL,Password varchar(45) DEFAULT NULL,CRN varchar(45) DEFAULT NULL,PRIMARY KEY (BannerId))")
     print("Table created")
 
 if __name__ == '__main__':

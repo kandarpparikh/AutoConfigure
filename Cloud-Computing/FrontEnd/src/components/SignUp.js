@@ -42,6 +42,7 @@ const SignUp = () => {
 
     const registerUser = (User) => {
         User.Operation = "register"
+        console.log(User)
         axios.post(base_api_url, {headers:headers, User})
         .then((response) => {
             console.log(response)

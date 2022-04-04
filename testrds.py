@@ -9,7 +9,7 @@ def get_secret_value(name):
     return response
 
 def getAllUsers():
-    credentials = get_secret_value('project-rds-test4')
+    credentials = get_secret_value('project-video1')
     creds = json.loads(credentials['SecretString'])
     connection = mysql.connector.connect(
     host=creds['host'],
@@ -30,7 +30,7 @@ def register():
     firstname = "kandarp"
     lastname = "Parikh"
     password = "password123"
-    credentials = get_secret_value('project-rds-test4')
+    credentials = get_secret_value('project-video1')
     creds = json.loads(credentials['SecretString'])
     connection = mysql.connector.connect(
     host=creds['host'],
