@@ -1,2 +1,3 @@
-# AutoConfigure
-Autoconfiguration of RDS database and dynamodb
+Our application "MyAcademics" aims at providing information about the courses offered at Dalhousie's Computer Science Department. The main feature of the application is that it sends notification to Dalhousie students whenever a subject that they wish to study in the next term becomes available. Students have to register for that subject in the application and they will get an email notification whenever seats are available and up for registration on Dalhousie's official class registration portal
+
+This project is deployed on AWS using Cloudformation template. All the configuration and provisioning of the infrastructure is done automatically done by AWS Cloudformation.
